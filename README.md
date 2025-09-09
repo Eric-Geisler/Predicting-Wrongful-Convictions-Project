@@ -22,30 +22,30 @@ All points are futher explained via comments in the notebook.
 
 1) Reading Data
 
--this section imports the necessary pacakages and reads the above data as a csv
+  -this section imports the necessary pacakages and reads the above data as a csv
 
--note: have to change the file pathway
+  -note: have to change the file pathway
 
 2) Data Cleaning and Engineering
 
--new columns for all inputs are created with numerical values
+  -new columns for all inputs are created with numerical values
 
--creation of two labels for time spent in prison and sentence length
+  -creation of two labels for time spent in prison and sentence length
 
--note: specific columns within the factor of official misconduct were transformed to numerical values; these variables were not used in the model but were transformed for future use
+  -note: specific columns within the factor of official misconduct were transformed to numerical values; these variables were not used in the model but were transformed for future use
 
--note: creation of the sentence length label required bucketization of the original column for sentence length
+  -note: creation of the sentence length label required bucketization of the original column for sentence length
 
 3) Variable Visualizations (Time Spent In Prison)
 
--boxplots showing the distribution of time spent in prison across levels of the input variables
+  -boxplots showing the distribution of time spent in prison across levels of the input variables
 
 4) Variable Visualizations (Sentence Category Number)
 
--boxplots showing the distribution of sentence category number across levels of the input variables
+  -boxplots showing the distribution of sentence category number across levels of the input variables
 
 5) Feed Forward Neural Network
 
--the model should run as is
+  -the model should run as is
 
--metrics/visualizations for validation data and testing data are included
+  -metrics/visualizations for validation data and testing data are included
