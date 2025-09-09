@@ -43,8 +43,6 @@ Data comes from the [National Registry of Exonerations](https://www.law.umich.ed
 - **Sentence Classification**: ~55% accuracy (vs. 22% random chance)  
 - **Time in Prison (Regression)**: Mean Absolute Error ≈ 6.8 years  
 
-While classification performed better than chance, regression results were unreliable. The model may offer a starting point for case prioritization but is not ready for real-world application.  
-
 ---
 
 ## Limitations  
