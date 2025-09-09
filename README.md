@@ -20,32 +20,33 @@ The Notebook is split into five sections denoted by headings.
 
 All points are futher explained via comments in the notebook.
 
-1) Reading Data
+## 1) Reading Data
+- Imports the necessary packages and reads the dataset as a CSV.  
+- **Note:** Update the file path before running.
 
-  -this section imports the necessary pacakages and reads the above data as a csv
+---
 
-  -note: have to change the file pathway
+## 2) Data Cleaning and Engineering
+- New columns for all inputs are created with numerical values.  
+- Creation of two labels:
+  - **Time spent in prison**
+  - **Sentence length**  
+- **Note:** Specific columns within the factor of *official misconduct* were transformed into numerical values. These variables were not used in the model but prepared for future use.  
+- **Note:** Creation of the sentence length label required bucketization of the original column.
 
-2) Data Cleaning and Engineering
+---
 
-  -new columns for all inputs are created with numerical values
+## 3) Variable Visualizations (Time Spent in Prison)
+- Boxplots showing the distribution of time spent in prison across levels of the input variables.
 
-  -creation of two labels for time spent in prison and sentence length
+---
 
-  -note: specific columns within the factor of official misconduct were transformed to numerical values; these variables were not used in the model but were transformed for future use
+## 4) Variable Visualizations (Sentence Category Number)
+- Boxplots showing the distribution of sentence category number across levels of the input variables.
 
-  -note: creation of the sentence length label required bucketization of the original column for sentence length
+---
 
-3) Variable Visualizations (Time Spent In Prison)
+## 5) Feed Forward Neural Network
+- The model should run as-is.  
+- Metrics and visualizations for **validation data** and **testing data** are included.
 
-  -boxplots showing the distribution of time spent in prison across levels of the input variables
-
-4) Variable Visualizations (Sentence Category Number)
-
-  -boxplots showing the distribution of sentence category number across levels of the input variables
-
-5) Feed Forward Neural Network
-
-  -the model should run as is
-
-  -metrics/visualizations for validation data and testing data are included
