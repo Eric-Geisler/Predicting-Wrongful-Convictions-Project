@@ -20,13 +20,13 @@ The Notebook is split into five sections denoted by headings.
 
 All points are futher explained via comments in the notebook.
 
-Reading Data
+1) Reading Data
 
 -this section imports the necessary pacakages and reads the above data as a csv
 
 -note: have to change the file pathway
 
-Data Cleaning and Engineering
+2) Data Cleaning and Engineering
 
 -new columns for all inputs are created with numerical values
 
@@ -36,15 +36,15 @@ Data Cleaning and Engineering
 
 -note: creation of the sentence length label required bucketization of the original column for sentence length
 
-Variable Visualizations (Time Spent In Prison)
+3) Variable Visualizations (Time Spent In Prison)
 
 -boxplots showing the distribution of time spent in prison across levels of the input variables
 
-Variable Visualizations (Sentence Category Number)
+4) Variable Visualizations (Sentence Category Number)
 
 -boxplots showing the distribution of sentence category number across levels of the input variables
 
-Feed Forward Neural Network
+5) Feed Forward Neural Network
 
 -the model should run as is
 
