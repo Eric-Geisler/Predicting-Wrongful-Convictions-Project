@@ -1,70 +1,54 @@
-# Can we predict the intensity of wrongful convictions in the United States justice system?
+# Predicting Wrongful Convictions
+
+## Overview  
+This project investigates whether the **intensity of wrongful convictions** in the U.S. justice system can be predicted using **demographic information** and **contributing factors**.  
+
+The goal is to predict two outcomes for exonerees:  
+- **Sentence length** (classification)  
+- **Time spent in prison** (regression)  
+
+**Inputs include:**  
+- **Demographics**: State, Race, Sex  
+- **Contributing Factors**:  
+  - Official Misconduct  
+  - False Forensic Analysis  
+  - False Confessions  
+  - False Accusations  
+  - Mistaken Eyewitness Identification  
+  - Inadequate Defense  
+
+Data comes from the [National Registry of Exonerations](https://www.law.umich.edu/special/exoneration/Pages/about.aspx).
 
 ---
 
-## Overview
-**Goal:** Predicting sentence received and time spent in prison of people who have been wrongfully convicted using:
+## Methods  
+- **Data Cleaning & Engineering**  
+  - Encoded categorical features into numeric/dummy variables  
+  - Bucketized sentence lengths into 9 categories (e.g., “Life,” “More than 40 years,” “Less than 10 years”)  
+  - Computed time spent in prison (log-transformed)  
 
-- **3 demographic inputs:** State, Race, Sex  
-- **6 contributing factors:**  
-  - Official misconduct  
-  - False forensic analysis  
-  - False confessions  
-  - False accusations  
-  - Mistaken eyewitness identification  
-  - Inadequate defense  
-
----
-
-## Data
-The dataset for this research comes from **The National Registry of Exonerations**.  
-The raw file can be accessed through **`WrongfulConvictions.csv`**.
+- **Model**  
+  - Built a **feed-forward neural network** in TensorFlow  
+  - Dual outputs:  
+    - **Regression** → Time Spent in Prison (log)  
+    - **Classification** → Sentence Category Number  
+  - **Hyperparameters:**  
+    - 14 epochs, batch size 100, learning rate 0.01  
+    - ReLU activations for hidden layers  
+    - Linear activation (regression) / Softmax activation (classification)  
 
 ---
 
-## Notebook Details
-The notebook requires the following packages:  
-- **Pandas**  
-- **NumPy**  
-- **TensorFlow**  
-- **Matplotlib**  
-- **scikit-learn**  
-- **Math**  
+## Results  
+- **Sentence Classification**: ~55% accuracy (vs. 22% random chance)  
+- **Time in Prison (Regression)**: Mean Absolute Error ≈ 6.8 years  
 
-With these installed, the notebook should run without modification.  
-It is split into **five sections**, denoted by headings.  
-All points are further explained via comments in the code.
+While classification performed better than chance, regression results were unreliable. The model may offer a starting point for case prioritization but is not ready for real-world application.  
 
 ---
 
-## Sections
+## Limitations  
+- **Labeling Challenges**: Bucketizing sentences led to information loss  
+- **Data Gaps**: Dataset excludes wrongful convictions not yet exonerated  
+- **Practical Use**: Contributing factors may not always be known before trial  
 
-### 1) Reading Data
-- Imports the necessary packages and reads the dataset as a CSV.  
-- **Note:** Update the file path before running.
-
----
-
-### 2) Data Cleaning and Engineering
-- New columns for all inputs are created with numerical values.  
-- Creation of two labels:
-  - **Time spent in prison**
-  - **Sentence length**  
-- **Note:** Specific columns within the factor of *official misconduct* were transformed into numerical values. These variables were not used in the model but prepared for future use.  
-- **Note:** Creation of the sentence length label required bucketization of the original column.
-
----
-
-### 3) Variable Visualizations (Time Spent in Prison)
-- Boxplots showing the distribution of time spent in prison across levels of the input variables.
-
----
-
-### 4) Variable Visualizations (Sentence Category Number)
-- Boxplots showing the distribution of sentence category number across levels of the input variables.
-
----
-
-### 5) Feed Forward Neural Network
-- The model should run as-is.  
-- Metrics and visualizations for **validation data** and **testing data** are included.
